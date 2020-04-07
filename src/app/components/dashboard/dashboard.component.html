@@ -1,0 +1,48 @@
+<div class="container pt-4">
+  <div class="d-flex justify-content-center pb-4">
+    <h1>Movie Search</h1>
+  </div>
+
+  <input
+    [(ngModel)]="title"
+    class="form-control"
+    placeholder="Enter movie title..."
+  />
+
+  <div class="pt-2">
+    <button (click)="searchMovie(title)" class="btn btn-dark btn-block">
+      Search
+    </button>
+  </div>
+
+  <!--   <ul class="list-group">
+    <li class="list-group-item" *ngFor="let movie of result.Search">
+      {{ movie.Title }}
+    </li>
+  </ul> -->
+
+  <div class="row justify-content-center p-2">
+    <div
+      class="card m-2"
+      style="width: 16rem;"
+      *ngFor="let movie of result.Search"
+    >
+      <img
+        src="{{ movie.Poster }}"
+        class="card-img-top rounded"
+        alt="Poster Missing"
+      />
+      <div class="card-body">
+        <h5 class="card-title pb-3">{{ movie.Title }}</h5>
+        <p>Year: {{ movie.Year }}</p>
+        <p>IMDB: {{ movie.IMDB }}</p>
+        <p>Recs: {{ movie.Recs }}</p>
+
+        <div class="row justify-content-around">
+          <a href="#" class="btn btn-primary">Recit</a>
+          <a routerlink="" class="btn btn-secondary">More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
