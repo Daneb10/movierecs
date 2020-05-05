@@ -18,7 +18,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { MoviesComponent } from './components/movies/movies.component';
+
 import { MovieService } from './services/movies.service';
 import { AuthService } from './services/auth.service';
 
@@ -32,7 +32,6 @@ import { AuthService } from './services/auth.service';
     RegisterComponent,
     SettingsComponent,
     NotFoundComponent,
-    MoviesComponent,
   ],
   imports: [
     BrowserModule,

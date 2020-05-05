@@ -6,7 +6,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-import { MoviesComponent } from './components/movies/movies.component';
 
 import { AuthGuard } from './guards/auth.guard';
 
@@ -16,7 +15,6 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'movie', component: MovieDetailsComponent, canActivate: [AuthGuard] },
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
-  { path: 'movies', component: MoviesComponent, canActivate: [AuthGuard] },
   { path: '**', component: NotFoundComponent },
 ];
 

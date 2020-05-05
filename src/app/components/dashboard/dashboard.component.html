@@ -15,12 +15,6 @@
     </button>
   </div>
 
-  <!--   <ul class="list-group">
-    <li class="list-group-item" *ngFor="let movie of result.Search">
-      {{ movie.Title }}
-    </li>
-  </ul> -->
-
   <div class="row justify-content-center p-2">
     <div
       class="card m-2"
@@ -34,13 +28,24 @@
       />
       <div class="card-body">
         <h5 class="card-title pb-3">{{ movie.Title }}</h5>
-        <p>Year: {{ movie.Year }}</p>
-        <p>IMDB: {{ movie.IMDB }}</p>
-        <p>Recs: {{ movie.Recs }}</p>
+        <p><strong>Year:</strong> {{ movie.Year }}</p>
+        <p><strong>IMDB:</strong> {{ details.imdbRating }}</p>
+        <p><strong>Rec:</strong> {{ count }}</p>
 
         <div class="row justify-content-around">
-          <a href="#" class="btn btn-primary">Recit</a>
-          <a routerlink="" class="btn btn-secondary">More</a>
+          <button
+            (click)="addRec(movie.imdbID)"
+            class="btn btn-primary"
+            [disabled]="!this.disabledbutton"
+          >
+            Recit
+          </button>
+          <a
+            routerlink="/movie"
+            (click)="movieSelected(movie.imdbID)"
+            class="btn btn-secondary text-white"
+            >Info</a
+          >
         </div>
       </div>
     </div>
